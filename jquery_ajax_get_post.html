@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery AJAX get() and post() Methods</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Los métodos AJAX get() y post()</h1>
+    
+    <p>Los métodos jQuery get() y post() son utilizados para solicitar datos al servidor con una solicitud HTTP GET o POST.</p>
+
+    <section id="titulo"><h2>Solicitud HTTP: GET vs. POST</h2>
+      <p>Dos métodos comunmente usados para una solicitud-respuesta entre un cliente y un servidor son: GET y POST.</p>
+      <li><b>GET</b> - Solicita datos a un recurso específico</li>
+      <li><b>POST</b> - Envía datos a ser procesados a un recurso específico</li>
+
+      <p>GET es usado básicamente para solamente obtener datos de un servidor. <b>Nota:</b> el método GET puede devolver datos almacenados en caché.</p>
+      <p>POST puede también ser utilizado para obtener datos de un servidor. Sin embargo, el método POST NUNCA almacena datos en caché y es usualmente utilizado para enviar datos junto a la solicitud.</p>
+      
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery $.get()</h2>
+      <p>El método <code class="res">$.get()</code> solicita datos de un servidor con una solicitud HTTP GET.</p>
+      <p><b>Sintaxis:</b></p>
+      <pre><code>
+  $.get(<i>URL</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro obligatorio "URL" especifica la URL que queremos solicitar.</p>
+      <p>El parámetro opcional "callback" es el nombre de una función a ser ejecutada y la solicitud tiene éxito.</p>
+      <p>El ejemplo siguiente usa el método <code class="res">$.get()</code> para obtener datos de un archivo en el servidor:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $.get("demo_test.asp", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+      </code></pre>
+
+      <p>El primer parámetro de <code class="res">$.get()</code> es la URL que queremos solicitar ("demo_test.asp").</p>
+      <p>El segundo parámetro es una función callback. El primer parámetro de la función callback mantiene el contenido de la página solicitada y el segundo parámetro mantiene el estado de la solicitud.</p>
+      <p><b>Tip:</b> A continuación se muestra cómo se ve el archivo ASP ("demo_test.asp"):</p>
+      <pre><code>
+  <span><</span>%
+  response.write("This is some text from an external ASP file.")
+  %>
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery $.post()</h2>
+      <p>El método <code class="res">$.post()</code> solicita datos de un servidor utilizand una solicitud HTTP POST.</p>
+      <p><b>Sintaxis:</b></p>
+      <pre><code>
+  $.post(<i>URL</i>,<i>data</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro obligatorio "URL" especifica la URL que queremos solicitar.</p>
+      <p>El parámetro opcional "data" especifica datos a enviar junto a la solicitud.</p>
+      <p>El parámetro opcional "callback" es el nombre de una función a ser ejecutada si la solicitud resulta exitosa.</p>
+      <p>El ejemplo siguiente utiliza el método <code class="res">$.post()</code> para enviar algunos datos junto a la solicitud:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $.post("demo_test_post.asp",
+    {
+      name: "Donald Duck",
+      city: "Duckburg"
+    },
+    function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+      </code></pre>
+
+      <p>El primer parámetro de <code class="res">$.post()</code> es la URL que queremos solicitar ("demo_test_post.asp").</p>
+      <p>Luego, pasamos algunos datos a ser enviados junto a la solicitud (name y city).</p>
+      <p>El script ASP e "demo_test_post.asp" lee los parámetros, los procesa y devuelve un resultado.</p>
+      <p>El tercer parámetro es una función callback. El primer parámetro esta función mantiene el contenido de la página solicitada, y el segundo mantiene el estado de la solicitud.</p>
+      <p><b>Tip:</b> Así es como luce el archivo ASP ("demo_test_post.asp"):</p>
+      <pre><code>
+  <span><</span>%
+  dim fname,city
+  fname=Request.Form("name")
+  city=Request.Form("city")
+  Response.Write("Dear " & fname & ". ")
+  Response.Write("Hope you live well in " & city & ".")
+  %>
+      </code></pre>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

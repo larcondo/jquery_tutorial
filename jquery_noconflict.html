@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery The noConflict() Method</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+    
+    <h1>jQuery - El método noConflict()</h1>
+    
+    <p>¿Qué pasaría si quisiéramos utilizar otros frameworks en nuestra página mientras seguimos utilizando jQuery?</p>
+
+    <section id="titulo"><h2>jQuery y otros FrameWorks JavaScript</h2>
+      <p>Como ya sabemos jQuery utiliza el signo <code class="res">$</code> como atajo jQuery.</p>
+      <p>Hay muchos otros frameworks JavaScript populares como: Angular, Backbone, Ember, Knockout, etc.</p>
+      <p><b>¿Qué pasa si otro framework JavaScript también utiliza el signo $ como atajo?</b></p>
+
+      <p>Si dos frameworks diferentes están usando el mismo atajo, uno de los dos podría dejar de funcionar.</p>
+      <p>El equipo jQuery ya pensó en ello e implementó el método <code class="res">noConflict()</code>.</p>
+      
+    </section>
+
+    <section id="titulo"><h2>El método jQuery noConflict()</h2>
+      <p>El método <code class="res">noConflict()</code> suelta la retención del identificador de atajo $, así otros scripts pueden utilizarlo.</p>
+      <p>Podemos, por supuesto, seguir usando jQuery, simplemente escribiendo el nombre completo (jQuery) en lugar del $:</p>
+      
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $.noConflict();
+  jQuery(document).ready(function(){
+    jQuery("button").click(function(){
+      jQuery("p").text("jQuery is still working!");
+    });
+  });
+      </code></pre>
+
+      <p>También podemos crear nuestro propio atajo ("shortcut") fácilmente. El método <code class="res">noConflict()</code> devuelve una referencia a jQuery que podemos guardar en una variable para uso posterior. Aquí va un ejemplo:</p>
+
+      <h3>Ejemplo</h3>
+      <pre><code>
+  var jq = $.noConflict();
+  jq(document).ready(function(){
+    jq("button").click(function(){
+      jq("p").text("jQuery is still working!");
+    });
+  });
+      </code></pre>
+
+      <p>Si tenemos un bloque de código jQuery que utiliza el <code class="res">$</code> y no queremos cambiar todo, podemos pasar el signo <code class="res">$</code> como un parámetro en el método <i>ready</i>.
+      Esto no permite acceder a jQuery usando <code class="res">$</code> dentro de esta función, fuera de ella tendremos que seguir utilizando "jQuery".
+      </p>
+
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $.noConflict();
+  jQuery(document).ready(function($){
+    $("button").click(function(){
+      $("p").text("jQuery is still working!");
+    });
+  });
+      </code></pre>
+
+    </section>
+    
+
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

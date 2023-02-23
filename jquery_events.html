@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Event Methods</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery Event Methods</h1>
+    <p>jQuery está hecho a medida para responder a eventos en una página HTML.</p>
+
+    <section id="titulo"><h2>¿Qué son los Eventos?</h2>
+      <p>Todas las diferentes acciones del usuario a las que una página puede responder son llamadas eventos.</p>
+      <p>Un evento representa el preciso momento cuando algo ocurre.</p>
+      <p>Ejemplos:</p>
+      <li>Mover el mouse sobre un elemento</li>
+      <li>Seleccionar un radio button</li>
+      <li>Hacer click en un elemento</li>
+
+      <p>Aquí van algunos ejemplos de eventos del DOM:</p>
+      <table class="tabla">
+        <tr>
+          <th>Mouse Events</th>
+          <th>Keyboard Events</th>
+          <th>Form Events</th>
+          <th>Document/Window Events</th>
+        </tr>
+        <tr>
+          <td>click</td>
+          <td>keypress</td>
+          <td>submit</td>
+          <td>load</td>
+        </tr>
+        <tr>
+          <td>dblclick</td>
+          <td>keydown</td>
+          <td>change</td>
+          <td>resize</td>
+        </tr>
+        <tr>
+          <td>mouseenter</td>
+          <td>keyup</td>
+          <td>focus</td>
+          <td>scroll</td>
+        </tr>
+        <tr>
+          <td>mouseleave</td>
+          <td></td>
+          <td>blur</td>
+          <td>unload</td>
+        </tr>
+      </table>
+    </section>
+    
+    <section id="titulo"><h2>Sintaxis jQuery para métodos de Eventos</h2>
+      <p>En jQuery, la mayoría de los eventos del DOM tienen su método jQuery equivalente.</p>
+      <p>Para asignar un <i>click event</i> a todos los párrafos de una página se debe hacer lo siguiente:</p>
+      <pre><code>
+  $("p").click();
+      </code></pre>
+
+      <p>El próximo paso es definir qué debería pasar cuando el evento ocurra. Debemos pasarle una función al evento:</p>
+      <pre><code>
+  $("p").click(function(){
+    // Las acciones van aquí!
+  });
+      </code></pre>
+
+    </section>
+    
+    
+    <section id="titulo"><h2>jQuery Event Methods comunmente usados</h2>
+      <h3>$(document).ready()</h3>
+      <p>El método <code class="res">$(document).ready()</code> nos permite ejecutar una función cuando el documento está totalmente cargado. Este método ya fue explicado previamente.</p>
+
+      <h3>click()</h3>
+      <p>El método <code class="res">click()</code> fija una función para manejar el evento de un elemento HTML.</p>
+      <p>La función se ejecuta cuando el ususario hace click en un elemento HTML.</p>
+      <pre><code>
+  $("p").click(function(){
+    $(this).hide();
+  });
+      </code></pre>
+
+      <h3>dblclick()</h3>
+      <p>La función se ejecuta cuando el usuario hace doble click en el elemento HTML.</p>
+      <pre><code>
+  $("p").dblclick(function(){
+    $(this).hide();
+  });
+      </code></pre>
+
+      <h3>mouseenter()</h3>
+      <p>La función se ejecuta cuando el puntero del mouse ingresa en el elemento HTML:</p>
+      <pre><code>
+  $("#p1").mouseenter(function(){
+    alert("You entered p1!");
+  });
+      </code></pre>
+
+      <h3>mouseleave()</h3>
+      <p>La función se ejecuta cuando el puntero del mouse deja el elemento HTML:</p>
+      <pre><code>
+  $("#p1").mouseleave(function(){
+    alert("Bye! You now leave p1!");
+  });
+      </code></pre>
+
+      <h3>mousedown</h3>
+      <p>La función se ejecuta cuando el botón derecho, izquierdo o del medio del mouse es presionado mientras el mouse está sobre el elemento HTML:</p>
+      <pre><code>
+  $("#p1").mousedown(function(){
+    alert("Mouse down over p1!");
+  });
+      </code></pre>
+
+      <h3>mouseup()</h3>
+      <p>La función se ejecuta cuando el botón derecho, izquierdo o del medio del mouse es soltado mientras el mouse está sobre el elemento HTML:</p>
+      <pre><code>
+  $("#p1").mouseup(function(){
+    alert("Mouse up over p1!");
+  });
+      </code></pre>
+
+      <h3>hover()</h3>
+      <p>El método <code class="res">hover()</code> toma dos funciones y es una combinación de los métodos <code class="res">mouseenter()</code> y <code class="res">mouseleave()</code>.</p>
+      <p>La primera función se ejecuta cuando el mouse ingresa al elemento HTML y la segunda cuando el mouse sale del elemento HTML:</p>
+      <pre><code>
+  $("#p1").hover(function(){
+    alert("You entered p1!");
+  },
+  function(){
+    alert("Bye! You now leave p1!");
+  });        
+      </code></pre>
+
+      <h3>focus()</h3>
+      <p>La función se ejecuta cuando el campo del formulario obtiene el foco:</p>
+      <pre><code>
+  $("input").focus(function(){
+    $(this).css("background-color", "#cccccc");
+  });
+      </code></pre>
+
+      <h3>blur()</h3>
+      <p>La función se ejecuta cuando el campo del formulario pierde el foco:</p>
+      <pre><code>
+  $("input").blur(function(){
+    $(this).css("background-color", "#ffffff");
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>El método on()</h2>
+      <p>El método <code class="res">on()</code> fija uno o más manejadores de eventos a los elementos seleccionados.</p>
+      <p>Agregar un evento click a un elemento <code class="res"><span><</span>p></code>:</p>
+      <pre><code>
+  $("p").on("click", function(){
+    $(this).hide();
+  });
+      </code></pre>
+
+      <p>Agregar múltiples manejadores de eventos a un elemento <code class="res"><span><</span>p></code>:</p>
+      <pre><code>
+  $("p").on({
+    mouseenter: function(){
+      $(this).css("background-color", "lightgray");
+    },
+    mouseleave: function(){
+      $(this).css("background-color", "lightblue");
+    },
+    click: function(){
+      $(this).css("background-color", "yellow");
+    }
+  });
+      </code></pre>
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

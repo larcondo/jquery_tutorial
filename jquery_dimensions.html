@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Dimensions</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Dimensiones</h1>
+    <p>Con jQuery es fácil trabajar con las dimensiones de los elementos y la ventana del navegador.</p>
+
+    <section id="titulo"><h2>Métodos jQuery de Dimensión</h2>
+      <p>jQuery tiene varios métodos importantes para trabajar con dimensiones:</p>
+      <li><code class="res">width()</code></li>
+      <li><code class="res">height()</code></li>
+      <li><code class="res">innerWidth()</code></li>
+      <li><code class="res">innerHeight()</code></li>
+      <li><code class="res">outerWidth()</code></li>
+      <li><code class="res">outerHeight()</code></li>
+    </section>
+    
+    <section id="titulo"><h2>Dimensinones jQuery</h2>
+      <img src="./imagenes/img_001.png" alt="Imagen 001">
+    </section>
+    
+    <section id="titulo"><h2>Los métodos jQuery width() y height()</h2>
+      <p>El método <code class="res">width()</code> establece o retorna el ancho de un elemento (excluyendo el padding, border y margin).</p>
+      <p>El método <code class="res">height()</code> establece o retorna el alto de un elemento (excluyendo el padding, border y margin).</p>
+      <p>El siguiente ejemplo retorna  el ancho y el alto de un elemento <code class="res"><span><</span>div></code> específico:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    var txt = "";
+    txt += "Width: " + $("#div1").width() + "<span><</span>/br>";
+    txt += "Height: " + $("#div1").height();
+    $("#div1").html(txt);
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Los métodos jQuery innerWidth() e innerHeight()</h2>
+      <p>El método <code class="res">innerWidth()</code> retorna el ancho de un elemento incluyendo el padding.</p>
+      <p>El método <code class="res">innerHeight()</code> retorna el alto de un elemento incluyendo el padding.</p>
+      <p>El ejemplo siguiente retorna el alto/ancho interior de un elemento <code class="res"><span><</span>div></code> específico:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    var txt = "";
+    txt += "Inner width: " + $("#div1").innerWidth() + "<span><</span>/br>";
+    txt += "Inner height: " + $("#div1").innerHeight();
+    $("#div1").html(txt);
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Los métodos jQuery outerWidth() e outerHeight()</h2>
+      <p>El método <code class="res">outerWidth()</code> retorna el ancho de un elemento incluyendo el padding y el border.</p>
+      <p>El método <code class="res">outerHeight()</code> retorna el alto de un elemento incluyendo el padding y el border.</p>
+      <p>El siguiente ejemplo retorna el ancho/alto externo de un elemento <code class="res"><span><</span>div></code> específico:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    var txt = "";
+    txt += "Outer width: " + $("#div1").outerWidth() + "<span><</span>/br>";
+    txt += "Outer height: " + $("#div1").outerHeight();
+    $("#div1").html(txt);
+  });
+      </code></pre>
+
+      <p>El método <code class="res">outerWidth(true)</code> retorna el ancho de un elemento incluyendo el padding, el border y el margin.</p>
+      <p>El método <code class="res">outerWidth(true)</code> retorna el alto de un elemento incluyendo el padding, el border y el margin.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    var txt = "";
+    txt += "Outer width (+margin): " + $("#div1").outerWidth(true) + "<span><</span>/br>";
+    txt += "Outer height (+margin): " + $("#div1").outerHeight(true);
+    $("#div1").html(txt);
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>width() y height() en document y window</h2>
+      <p>El siguiente ejemplo retorna el ancho y el alto de un documento (el documento HTML) y la ventana (el viewport del navegador):</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    var txt = "";
+    txt += "Document width/height: " + $(document).width();
+    txt += "x" + $(document).height() + "\n";
+    txt += "Window width/height: " + $(window).width();
+    txt += "x" + $(window).height();
+    alert(txt);
+  });
+      </code></pre>
+
+      <p>El ejemplo siguiente establece el ancho y el alto de un elemento <code class="res"><span><</span>div></code> específico:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("#div1").width(500).height(500);
+  });
+      </code></pre>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

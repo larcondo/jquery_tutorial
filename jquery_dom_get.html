@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Get Content and Attributes</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Obtener (Get) Contenido y Atributos</h1>
+    <p>jQuery tiene poderosos métodos para encadenar y manipular elementos y atributos HTML.</p>
+
+    <section id="titulo"><h2>Manipulación del DOM jQuery</h2>
+      <p>Una parte muy importante de jQuery es la posibilidad de manipular el DOM.</p>
+      <p>jQuery viene con un grupo de métodos relativos al DOM que hacen más fácil el acceso y manipulación de los elementos y atributos.</p>
+
+      <div class="nota">
+        <b>DOM = Document Object Model</b> <br>
+        El DOM define un estándar para el acceso a documentos HTML y XML: <br>
+        <i>"El W3C Document Object Model (DOM) es una plataforma y lenguaje neutral que permite a programas y scripts acceder y actualizar dinamicamente el contenido, estructura y estilo de un documento.</i>
+      </div>
+
+    </section>
+    
+    <section id="titulo"><h2>Contenido Get - text(), html() y val()</h2>
+      <p>Tres simples, pero útiles, métodos jQuery para manipular el DOM son:</p>
+      <li><code class="res">text()</code> - Establece o retorna el contenido de texto de los elementos seleccionados</li>
+      <li><code class="res">html()</code> - Establece o retorna el contenido de los elementos seleccionados (incluído el markup HTML)</li>
+      <li><code class="res">val()</code> - Establece o retorna el valor de los campos de formulario</li>
+
+      <p>El ejemplo siguiente muestra como obtener el contenido con los métodos jQuery <code class="res">text()</code> y <code class="res">html()</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
+      </code></pre>
+
+      <p>El ejemplo siguiente muestra como obtener el valor de un campo "input" con el método jQuery <code class="res">val()</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#btn1").click(function(){
+    alert("Value: " + $("#test").val());
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>Atributos Get - attr()</h2>
+      <p>El método jQuery <code class="res">attr()</code> es utilizado para obtener (get) valores de atributos.</p>
+      <p>El ejemplo siguiente muestra como obtener el valor del atributo "href" en un elemento link:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    alert($("#w3s").attr("href"));
+  });
+      </code></pre>
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

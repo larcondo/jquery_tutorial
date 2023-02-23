@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Effects - Hide and Show</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>Efectos jQuery - Hide y Show</h1>
+
+    <section id="titulo"><h2>jQuery hide() y show()</h2>
+      <p>Con jQuery podemos ocultar y mostrar elementos HTML con los métodos <code class="res">hide()</code> y <code class="res">show()</code>:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  
+  $("#show").click(function(){
+    $("p").show();
+  });
+        </code></pre>
+      </div>
+
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).hide(<i>speed</i>,<i>callback</i>);
+  $(<i>selector</i>).show(<i>speed</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro opcional <i>speed</i> especifica la velocidad en la que se oculta/muestra el elemento y puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que el método <code class="res">hide()</code> o <code class="res">show()</code> se complete.</p>
+      <p>El ejemplo siguiente muestra el uso del parámetro <i>speed</i> con el método <code class="res">hide()</code>:</p>
+      <pre><code>
+  $("button").click(function() {
+    $("p").hide(1000);
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>jQuery toggle()</h2>
+      <p>También podemos alternar (toggle) entre mostrar y ocultar un elemento con el método <code class="res">toggle()</code>.</p>
+      <p>Los elementos que se están mostrando son ocultados y los que están ocultos son mostrados:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("p").togle();
+  });
+        </code></pre>
+      </div>
+
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).toggle(<i>speed</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro opcional <i>speed</i> puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que <code class="res">toggle()</code> finalice.</p>
+    
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

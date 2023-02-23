@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Traversing</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+    <h1>jQuery Traversing</h1>
+    
+    <section id="titulo"><h2>¿Qué es Traversing?</h2>
+      <p>
+        jQuery traversing, que significa "moverse a través", es utilizado para "encontrar" (o seleccionar)
+        elementos HTML basándose en su relación con otros elementos. Se comienza con una selección
+        y se mueve a través de esa selección hasta alcanzar el elemento deseado.
+      </p>
+
+      <p>
+        La imagen siguiente ilustra una página HTML como un árbol (el árbol del DOM). Con jQuery traversing, podemos fácilmente
+        movernos hacia arriba (ancestros), hacia abajo (descendientes) y hacia los costados (hermanos) en el árbol,
+        comenzando por el elemento seleccionado (el elemento actual). Este movimiento es llamado <i>traversing</i> - o moverse a través - del árbol del DOM.
+      </p>
+
+      <img src="./imagenes/img_002.png" alt="Imagen 002">
+
+      <p>Explicación de la ilustración:</p>
+      <li>El elemento <span><</span>div> es el <b>padre</b> del <span><</span>ul> y un <b>ancestro</b> de todo lo que hay dentro de él.</li>
+      <li>El elemento <span><</span>ul> es el <b>padre</b> de ambos elementos <span><</span>li> y un <b>hijo</b> del <span><</span>div></li>
+      <li>El elemento <span><</span>li> izquierdo es el <b>padre</b> de los <span><</span>span>, <b>hijo</b> del <span><</span>ul> y un <b>descendiente</b> del <span><</span>div></li>
+      <li>El elemento <span><</span>span> es un <b>hijo</b> del <span><</span>li> izquierdo y un <b>descendiente</b> de <span><</span>ul> y <span><</span>div></li>
+      <li>Los dos elementos <span><</span>li> son <b>hermanos</b> (comparten el mismo padre)</li>
+      <li>El elemento <span><</span>li> derecho es el <b>padre</b> de <span><</span>b>, <b>hijo</b> de <span><</span>ul> y un <b>descendiente</b> de <span><</span>div></li>
+      <li>El elemento <span><</span>b> es un <b>hijo</b> del <span><</span>li> derecho y un <b>descendiente</b> de <span><</span>ul> y <span><</span>div></li>
+
+      <div class="nota">
+        Un ancestro es un padre, un abuelo, un bis-abuelo, y así sucesivamente. Un descendiente es un hijo,
+        un nieto, un bis-nieto, y así sucesivamente. Los hermanos comparten el mismo padre.
+      </div>
+
+    </section>
+    
+    <section id="titulo"><h2>Recorrer el DOM</h2>
+      <p>jQuery provee una variedad de métodos que nos permiten recorrer el DOM.</p>
+      <p>La categoría más amplia de métodos de recorrido (traversal) es la de recorrido en árbol.</p>
+      <p>En capítulos siguientes mostraremos cómo recorrer hacia arriba, hacia abajo y hacia los lados el árbol DOM.</p>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

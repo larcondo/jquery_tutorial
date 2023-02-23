@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Syntax</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>Sintaxis jQuery</h1>
+
+    <p>Con jQuery podemos seleccionar (query) elementos HTML y realizar "acciones" sobre ellos.</p>
+
+    <p>La sintaxis básica es: <b>$(<i>selector</i>).<i>action</i>()</b></p>
+    <li>Un signo $ para definir/acceder a jQuery</li>
+    <li>Un (selector) "consultar (o buscar)" elementos HTML</li>
+    <li>Una <i>action()</i> jQuery a ser ejecutada en los elementos HTML.</li>
+
+    <p>Ejemplo:</p>
+    <li><code class="res">$(this).hide()</code> - oculta el elemento actual.</li>
+    <li><code class="res">$("p").hide()</code> - oculta todos los elementos <span><</span>p>.</li>
+    <li><code class="res">$(".test").hide()</code> - oculta todos los elementos con la clase class="test".</li>
+    <li><code class="res">$("#test").hide()</code> - oculta todos los elementso con el id id="test".</li>
+
+    <div class="nota">
+      <b>Nota:</b> jQuery utiliza la sintaxis CSS para seleccionar elementos.
+    </div>
+
+    <section id="titulo"><h2>El evento Document Ready</h2>
+      <p>Notarás que todos los métodos utilizados en los ejemplos estarán "dentro" del evento <i>document ready</i>:</p>
+      
+      <pre><code>
+  $(document).ready(function(){
+
+    // jQuery methods go here...
+
+  });
+      </code></pre>
+
+      <p>Esto es para prevenir que cualquier código jQuery se ejecute antes de que el documento termine de cargar (esté listo, "is ready").</p>
+      <p>Es una buena práctica esperar a que el documento esté totalmente cargado y listo antes de trabajar con el mismo. Esto también te permite tener el código JavaScript antes del <code class="res">body</code> del documento, en la sección <code class="res">head</code>.</p>
+      <p>Aquí van algunos ejemplos de acciones que pueden fallar si los métodos se ejecutan antes de que el documento esté totalmente cargado:</p>
+      <li>Tratar de ocultar un elemento que no ha sido creado aún.</li>
+      <li>Tratar de obtener el tamaño de una imagen que todavía no ha sido cargada aún.</li>
+
+      <p><b>Tip:</b> El jQuery team también ha creado un método abreviado para el vento <i>document ready</i>:</p>
+      <pre><code>
+  $(function(){
+
+    // jQuery methods go here...
+  
+  });
+      </code></pre>
+
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

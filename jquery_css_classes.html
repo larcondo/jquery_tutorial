@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Get and Set CSS Classes</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Get y Set clases CSS</h1>
+    <p>Con jQuery es fácil manipular el estilo de los elementos.</p>
+    
+    <section id="titulo"><h2>Manipular CSS con jQuery</h2>
+      <p>jQuery tiene varios métodos para manipular CSS. Entre dichos métodos veremos los siguientes:</p>
+      <li><code class="res">addClass()</code> - Añade una o más clases a los elementos seleccionados</li>
+      <li><code class="res">removeClass()</code> - Quita una o más clases a los elementos seleccionados</li>
+      <li><code class="res">toggleClass()</code> - Alterna entre agregar/quitar clases de los elementos seleccionados</li>
+      <li><code class="res">css()</code> - Establece o retorna el atributo "style"</li>
+    </section>
+    
+    <section id="titulo"><h2>Hoja de Estilo Ejemplo</h2>
+      <p>La siguiente hoja de estilos será utilizada para todos los ejemplos en este capítulo:</p>
+      <pre><code>
+  .important {
+    font-weight: bold;
+    font-size: xx-large;
+  }
+
+  .blue {
+    color: blue;
+  }
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery addClass()</h2>
+      <p>El siguiente ejemplo muestra cómo añadir atributos "class" a diferentes elementos. Además, podemos seleccionar múltiples elementos cuando añadimos clases:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("h1, h2, p").addClass("blue");
+    $("div").addClass("important");
+  });
+      </code></pre>
+
+      <p>Podemos, también, especificar múltiples clases dentro del método <code class="res">addClass()</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("#div1").addClass("important blue");
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery removeClass()</h2>
+      <p>El ejemplo siguiente muestra cómo quitar un atributo "class" específico de diferentes elementos:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("h1, h2, p").removeClass("blue");
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery toggleClass()</h2>
+      <p>El siguiente ejemplo muestra cómo utilizar el método jQuery <code class="res">toggleClass()</code>. Este método alterna entre añadir/quitar clases en los elementos seleccionados:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("h1, h2, p").toggleClass("blue");
+  });
+      </code></pre>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

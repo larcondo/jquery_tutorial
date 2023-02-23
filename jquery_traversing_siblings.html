@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Traversing Siblings</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery Traversing - Siblings</h1>
+    <p>Con jQuery podemos recorrer hacia los lados el árbolo DOM para encontrar "hermanos" de un elemento.</p>
+    <p>Hermanos (Siblings) comparten el mismo padre.</p>
+
+    <section id="titulo"><h2>Recorrer hacia los lados el árbol DOM</h2>
+      <p>Hay muchos métodos jQuery útiles para recorrer hacia los lados el árbol DOM:</p>
+      <li><code class="res">siblings()</code></li>
+      <li><code class="res">next()</code></li>
+      <li><code class="res">nextAll()</code></li>
+      <li><code class="res">nextUntil()</code></li>
+      <li><code class="res">prev()</code></li>
+      <li><code class="res">prevAll()</code></li>
+      <li><code class="res">prevUntil()</code></li>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery siblings()</h2>
+      <p>El método <code class="res">siblings()</code> devuelve todos los elementos "hermanos" del elemento seleccionado.</p>
+      <p>El siguiente ejemplo devuelve todos los "hermanos" del <code class="res"><span><</span>h2></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("h2").siblings();
+  });
+      </code></pre>
+
+      <p>También podemos utilizar un parámetro opcional para filtrar la búsqueda de "hermanos".</p>
+      <p>El siguiente ejemplo devuelve todos los elementos "hermanos" de <code class="res"><span><</span>h2></code> que son elementos <code class="res"><span><</span>p></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("h2").siblings("p");
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery next()</h2>
+      <p>El método <code class="res">next()</code> devuelve el elemento hermano siguiente al elemento seleccionado.</p>
+      <p>El siguiente ejemplo devuelve el siguiente hermano de <code class="res"><span><</span>h2></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("h2").next();
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery nextAll()</h2>
+      <p>El método <code class="res">nextAll()</code> devuelve todos los elementos hermanos siguientes al elemento seleccionado.</p>
+      <p>El siguiente ejemplo devuelve todos los elementos hermanos siguientes de <code class="res"><span><</span>h2></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("h2").nextAll();
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery nextUntil()</h2>
+      <p>El método <code class="res">nextUntil()</code> devuelve todos los elementos hermanos siguientes entre dos argumentos dados.</p>
+      <p>El siguiente ejemplo devuelve todos los elementos hermanos entre un <code class="res"><span><</span>h2></code> y un elemento <code class="res"><span><</span>h6></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("h2").nextUntil("h6");
+  });
+      </code></pre>
+    </section>
+   
+    <section id="titulo"><h2>Los métodos jQuery prev(), prevAll() y prevUntil()</h2>
+      <p>Los métodos <code class="res">prev()</code>, <code class="res">prevAll()</code> y <code class="res">prevUntil()</code> funcionan de la misma manera que los métodos antes mencionados pero con funcionalidad opuesta: 
+      devuelven los elementos hermanos <i>anteriores</i> (recorre los elementos hermanos hacia atrás en el árbol DOM, en vez de recorrerlo hacia adelante).</p>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

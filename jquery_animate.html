@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Effects - Animation</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>Efectos jQuery - Animation</h1>
+
+    <section id="titulo"><h2>jQuery Animations - El método animate()</h2>
+      <p>El método <code class="res">animate()</code> es utilizado para crear animaciones personalizadas.</p>
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).animate({<i>params</i>},<i>speed</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro obligatorio <i>params</i> define las propiedades CSS a ser animadas.</p>
+      <p>El parámetro opcional <i>speed</i> define la duración del efecto. Puede tener los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada después que la animación finalice.</p>
+      <p>El siguiente ejemplo muestra un simple uso del método <code class="res">animate()</code>, donde se mueve el elemento <span><</span>span> hacia la derecha hasta que alcance 250px en la propiedad "left":</p>
+      
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("div").animate({left: '250px'});
+  }); 
+        </code></pre>
+      </div>
+
+      <div class="nota">
+        Por defecto, todos los elementos HTML tienen una posición estática y no se pueden mover. Para manipular la posición, recuerda primero establecer la propiedad CSS "position" del elemento a "relative", "fixed" o "absolute"!
+      </div>
+
+    </section>
+        
+    <section id="titulo"><h2>jQuery animate() - Manipular múltiples propiedades</h2>
+      <p>Notemos que multiples propiedades pueden ser animadas al mismo tiempo:</p>
+      
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("div").animate({
+      left: '250px',
+      opacity: '0.5',
+      height: '150px',
+      width: '150px'
+    });
+  }); 
+        </code></pre>
+      </div>
+
+      <div class="nota">
+        <b>¿Es posible manipular TODAS las pripiedades CSS con el método animate()?</b> <br>
+        Si, casi! Sin embargo, hay una cosa importante a recordar: todos los nombres de las propiedades deben tener nomenclatura "camel-cased" cuando son utilizadas con el método animate().
+        Debemos escribir <i>paddingLeft</i> en vez de <i>padding-left</i>, <i>marginRight</i> en vez de <i>margin-right</i>, y así sucesivamente. <br>
+        <br>
+        La animación de color no está incluída en la librería principal jQuery. Si queremos una animación de color, necesitaremos descargar el <u>Color Animations plugin</u> desde jQuery.com.
+      </div>
+    </section>
+        
+    <section id="titulo"><h2>jQuery animate() - Usar valores relativos</h2>
+      <p>También es posible definir valores relativos (relativo al valor actual del elemento). Esto se hace poniendo += o -= antes del valor:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("div").animate({
+      left: '250px',
+      height: '+=150px',
+      width: '+=150px'
+    });
+  }); 
+        </code></pre>
+      </div>
+    </section>
+    
+    <section id="titulo"><h2>jQuery animate() - Usar valores pre-definidos</h2>
+      <p>Incluso podemos especificar un valor de animación de la propiedad como "<code class="res">show</code>", "<code class="res">hide</code>" o "<code class="res">toggle</code>":</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("div").animate({
+      height: 'toggle'
+    });
+  });
+        </code></pre>
+      </div>
+    </section>
+    
+    <section id="titulo"><h2>jQuery animate() - Usar la funcionalidad de cola</h2>
+      <p>Por defecto, jQuery viene con una funcionalidad de cola para las animaciones.</p>
+      <p>Esto quiere decir que si escribimos multiples llamadas a <code class="res">animation()</code>, una después de otra, jQuery crea una cola "interna" con esas llamadas al método. Luego, ejecuta esas llamadas una por una.</p>
+      <p>Entonces, si queremos realizar diferentes animaciones una despés de otra, podemos hacer uso de esta funcionalidad:</p>
+      <button class="accordion"><h3>Ejemplo 1</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    var div = $("div");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+        </code></pre>
+      </div>
+
+      <p>El ejemplo siguiente mueve el elemento <code class="res"><span><</span>div></code> hacia la derecha y luego incrementa el tamaño del texto:</p>
+      <button class="accordion"><h3>Ejemplo 2</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    var div = $("div");
+    div.animate({left: '100px'}, "slow");
+    div.animate({fontSize: '3em'}, "slow");
+  }); 
+        </code></pre>
+      </div>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

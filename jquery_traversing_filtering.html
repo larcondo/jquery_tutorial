@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Traversing Filtering Selections</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery Traversing - Filtering</h1>
+
+    <section id="titulo"><h2>Los métodos first(), last(), eq(), filter() y not()</h2>
+      <p>Los métodos de filtrado más básicos son <code class="res">first()</code>, <code class="res">last()</code> y <code class="res">eq()</code>, los cuales nos permiten seleccionar un elemento específico en base a su posición dentro de un grupo de elementos.</p>
+      <p>Otros métodos de filtrado, como <code class="res">filter()</code> y <code class="res">not()</code> nos permiten seleccionar elementos que coincidan o no coincidadn con un determinado criterio.</p>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery first()</h2>
+      <p>El método <code class="res">first()</code> devuelve el primer elemento del tipo de elemento especificado.</p>
+      <p>El siguiente ejemplo selecciona el primer elemento <code class="res"><span><</span>div></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("div").first();
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery last()</h2>
+      <p>El método <code class="res">last()</code> devuelve el último elemento del tipo de elemento especificado.</p>
+      <p>El ejemplo que sigue selecciona el último elemento <code class="res"><span><</span>div></code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("div").last();
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery eq()</h2>
+      <p>El método <code class="res">eq()</code> devuelve un elemento con un número específico de índice en los elementos seleccionados.</p>
+      <p>El número de índice comienza con 0, así que el primer elemento tendrá el número de índice 0 y no 1. El ejemplo siguiente selecciona el segundo elemento <code class="res"><span><</span>p></code> (índice número 1):</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("p").eq(1);
+  });
+      </code></pre>
+    </section>
+        
+    <section id="titulo"><h2>El método jQuery filter()</h2>
+      <p>El método <code class="res">filter()</code> nos deja especificar un criterio. Los elementos que no coinciden con el criterio son quitados de la selección, y aquellos que coinciden son devueltos.</p>
+      <p>El ejemplo siguiente devuelve todos los elementos <code class="res"><span><</span>p></code> con nombre de clase "intro":</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("p").filter(".intro");
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery not()</h2>
+      <p>El método <code class="res">not()</code> devuelve todos los elementos que no coinciden con un criterio.</p>
+      <p><b>Tip:</b> el método <code class="res">not()</code> es el método opuesto de <code class="res">filter()</code>.</p>
+      <p>El siguiente ejemplo devuelve todos los elementos <code class="res"><span><</span>p></code> que no tienen el nombre de clase "intro":</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $(document).ready(function(){
+    $("p").not(".intro");
+  });
+      </code></pre>
+    </section>
+        
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

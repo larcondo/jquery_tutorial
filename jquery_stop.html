@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Effects - Stop Animations</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery Stop Animations</h1>
+    
+    <section id="titulo"><h2>El método jQuery stop()</h2>
+      <p>El método jQuery <code class="res">stop()</code> es utilizado para para animaciones o efectos antes de que finalicen.</p>
+      <p>El método <code class="res">stop()</code> funciona para todas las funciones de efectos jQuery, incluyendo las animacions de desplazamieto (sliding), desvanecimiento (fading) y las animaciones personalizadas.</p>      
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).stop(<i>stopAll</i>,<i>goToEnd</i>);
+      </code></pre>
+
+      <p>El parámetro opcional <i>stopAll</i> especifica si la cola de animaciones debe ser borrada o no. Por defecto su valor es <code>false</code>, lo que significa que solo la animación activa se debe parar, permitiendo que las animaciones siguientes en la cola se ejecuten luego.</p>
+      <p>El parámetro opcional <i>goToEnd</i> especifica si completar la animación actual inmediatamente o no. Por defecto su valor es <code>false</code>.</p>
+      <p>Así que, por defecto, el método <code class="res">stop()</code> "mata" la animación actual que está siendo ejecutada en el elemento seleccionado.</p>
+      <p>El siguiente ejemplo muestra el uso del método <code class="res">stop()</code>, sin ningún parámetro:</p>
+
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("#stop").click(function(){
+    $("#panel").stop();
+  });
+        </code></pre>
+      </div>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Selectors</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>Selectores jQuery</h1>
+
+    <p>Los selectores jQuery son una de las partes más importantes de la librería jQuery.</p>
+
+    <section id="titulo"><h2>Selectores jQuery</h2>
+      <p>Los selectores jQuery permiten seleccionar y manipular elementos HTML.</p>
+      <p>Son utilizados para "buscar" (o seleccionar) elementos HTML en base a su nombre, id, clase, tipo, atributos, valors de atributos y mucho más. Está basado en los <u>Selectores CSS</u> existentes e incluso, tienen sus propios selectores.</p>
+      <p>Todos los selectores en jQuery comienzan con el signo de dolar y paréntesis: <code class="res">$()</code>.</p>
+    </section>
+    
+    <section id="titulo"><h2>El selector element</h2>
+      <p>Selecciona elementos en base a el nombre del elemento.</p>
+      <p>Podemos seleccionar todos los elementos <code class="res"><span><</span>p></code> en una página así:</p>
+      <pre><code>
+  $("p")
+      </code></pre>
+    </section>
+
+    <section id="titulo"><h2>El selector #id</h2>
+      <p>El selector <code class="res">#id</code> de jQuery utiliza el atributo id de un tag HTML para encontrar un elemento específico.</p>
+      <p>Un id debe ser único dentro de una página, así que debemos utilizar el selector #id cuando queremos encontrar un solo y único elemento.</p>
+      <p>Para encontrar un elemento con un id específico, se escribe el caracter "hash" (#) seguido por el id del elemento HTML:</p>
+      <pre><code>
+  $("#test")
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El selector .class</h2>
+      <p>El selector <code class="res">.class</code> de jQuery encuentra elementos de una clase específica.</p>
+      <p>Para encontrar elementos con una clase específica, escribimos el caracter "period" (.) seguido del nombre de la clase:</p>
+      <pre><code>
+  $(".test")
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Más ejemplos de Selectores jQuery</h2>
+      <table class="tabla">
+        <tr>
+          <th>Sintaxis</th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td><code>$("*")</code></td>
+          <td>Selecciona todos los elementos</td>
+        </tr>
+        <tr>
+          <td><code>$(this)</code></td>
+          <td>Selecciona el elemento HTML actual</td>
+        </tr>
+        <tr>
+          <td><code>$("p.intro")</code></td>
+          <td>Selecciona todos los elementos <span><</span>p> con class="intro"</td>
+        </tr>
+        <tr>
+          <td><code>$("p:first")</code></td>
+          <td>Selecciona el primer elemento <span><</span>p></td>
+        </tr>
+        <tr>
+          <td><code>$("ul li:first")</code></td>
+          <td>Selecciona el primer elemento <span><</span>li> del primer <span><</span>ul></td>
+        </tr>
+        <tr>
+          <td><code>$("ul li:first-child")</code></td>
+          <td>Selecciona el primer elemento <span><</span>li> de cada <span><</span>ul></td>
+        </tr>
+        <tr>
+          <td><code>$("[href]")</code></td>
+          <td>Selecciona todos los elementos con un atributo "href"</td>
+        </tr>
+        <tr>
+          <td><code>$("a[target='_blank']")</code></td>
+          <td>Selecciona todos los elementos <span><</span>a> con un valor de target attribute igual a "_blank"</td>
+        </tr>
+        <tr>
+          <td><code>$("a[target!='_blank']")</code></td>
+          <td>Selecciona todos los elementos <span><</span>a> con un valor de target attribute NO igual a "_blank"</td>
+        </tr>
+        <tr>
+          <td><code>$(":button")</code></td>
+          <td>Selecciona todos los elementos <span><</span>button> y los elementos <span><</span>input> de type="button"</td>
+        </tr>
+        <tr>
+          <td><code>$("tr:even")</code></td>
+          <td>Selecciona todos los elementos <span><</span>tr> pares</td>
+        </tr>
+        <tr>
+          <td><code>$("tr:odd")</code></td>
+          <td>Selecciona todos los elementos <span><</span>tr> impares</td>
+        </tr>
+
+      </table>
+    
+    </section>
+        
+    <section id="titulo"><h2>Funciones en Archivos Separados</h2>
+      <p>Si un sitio web tiene muchas páginas y queremos que nuestras funciones jQuery sean fáciles de mantener, podemos poner dichas funciones en archivos .js separados.</p>
+      <p>Cuando presentamos jQuery, las funciones fueron agregadas directamente en la sección <code class="res"><span><</span>head></code>. Sin embargo, a veces es preferible ponerlas en archivos separados, como en el ejemplo siguiente: (se utiliza el atributo src para referir al archivo .js)</p>
+      <button class="accordion"><h3>Example</h3></button>
+      <div class="panel">
+        <pre><code>
+  <span><</span>head>
+  <span><</span>script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"><span><</span>/script>
+  <span><</span>script src="my_jquery_functions.js"><span><</span>/script>
+  <span><</span>/head>
+        </code></pre>
+      </div>
+
+    </section>
+    
+    <section id="titulo"><h2></h2></section>
+
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

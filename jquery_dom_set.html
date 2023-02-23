@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Set Content and Attributes</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Establecer (Set) Contenido y Atributos</h1>
+
+    <section id="titulo"><h2>Establecer Contenido - text(), html() y val()</h2>
+      <p>Usaremos los mismos tres métodos de la sección anterior para <b>establecer el contenido</b>:</p>
+      <li><code class="res">text()</code> - Establece o retorna el contenido de texto de los elementos seleccionados</li>
+      <li><code class="res">html()</code> - Establece o retorna el contenido de los elementos seleccionados (incluído el markup HTML)</li>
+      <li><code class="res">val()</code> - Establece o retorna el valor de los campos de formulario</li>
+
+      <p>El ejemplo siguiente muestra como establecer el contenido con los métodos jQuery <code class="res">text()</code>, <code class="res">html()</code> y <code class="res">val()</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#btn1").click(function(){
+    $("#test1").text("Hello world!");
+  });
+  $("#btn2").click(function(){
+    $("#test2").html("<span><</span>b>Hello world!<span><</span>/b>");
+  });
+  $("#btn3").click(function(){
+    $("#test3").val("Dolly Duck");
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>Función Callback para text(), html() y val()</h2>
+      <p>Todos los métodos anteriores <code class="res">text()</code>, <code class="res">html()</code> y <code class="res">val()</code> también vienen con una función de callback.
+        La función callback tiene dos parámetros: el índice del elemento actual en la lista de elementos seleccionados y el valor original (anterior).
+        Entonces podremos retornar el string que querramos utilizar como el nuevo valor desde la función.
+      </p>
+
+      <p>El siguiente ejemplo muestra los métodos <code class="res">text()</code> y <code class="res">html()</code> con una función callback:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#btn1").click(function(){
+    $("#test1").text(function(i, origText){
+      return "Old text: " + origText + " New text: Hello world!
+      (index: " + i + ")";
+    });
+  });
+  
+  $("#btn2").click(function(){
+    $("#test2").html(function(i, origText){
+      return "Old html: " + origText + " New html: Hello <b>world!</b>
+      (index: " + i + ")";
+    });
+  });
+      </code></pre>
+
+    </section>
+    
+    <section id="titulo"><h2>Setear Atributos - attr()</h2>
+      <p>El método jQuery <code class="res">attr()</code> también se utiliza para establecer/cambiar valores de atributos.</p>
+      <p>El ejemplo siguiente muestra cómo cambiar (set) el valor del atributo "href" de un elemento link:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+  });
+      </code></pre>
+
+      <p>El método <code class="res">attr()</code> también nos permite establecer múltiples attributos al mismo tiempo.</p>
+      <p>El siguiente ejemplo muestra cómo establecer los atributos "href" y "title" al mismo tiempo:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("button").click(function(){
+    $("#w3s").attr({
+      "href" : "https://www.w3schools.com/jquery/",
+      "title" : "W3Schools jQuery Tutorial"
+    });
+  });
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Función Callback para attr()</h2>
+      <p>El método jQuery <code class="res">attr()</code> también viene con una función callback. Dicha función callback tiene dos parámetros:
+      el índice del elemento actual en la lista de los elementos seleccionados y el valor original (anterior) del atributo. Así, podremos retornar 
+    el string que querramos utilizar como nuevo valor de atributo desde la función.</p>
+
+    <p>El siguiente ejemplo muestra el método <code class="res">attr()</code> con una función callback:</p>
+    <h3>Ejemplo</h3>
+    <pre><code>
+  $("button").click(function(){
+    $("#w3s").attr("href", function(i, origValue){
+      return origValue + "/jquery/";
+    });
+  });
+    </code></pre>
+
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

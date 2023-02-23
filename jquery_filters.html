@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Filters</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Filtros</h1>
+    
+    <section id="titulo"><h2>Filtros jQuery</h2>
+      <p>Podemos usar jQuery para filtrar/buscar elementos específicos.</p>
+    </section>
+
+    <section id="titulo"><h2>Filtrar Tablas</h2>
+      <p>Realizar una búsqueda de items en una tabla sin importar las mayúsculas/minúsculas (case-insensitive):</p>
+      <h3>Ejemplo</h3>
+      <img src="./imagenes/img_003.png" alt="Imagen 003">
+      <h3>jQuery</h3>
+      <pre><code>
+  <span><</span>script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  <span><</span>/script>
+      </code></pre>
+
+      <p><b>Ejemplo explicado:</b> Usamos jQuery para recorrer cada fila de la tabla y verificar si hay algún texto que coincida con el valor del campo "input".
+      El método <code class="res">toggle()</code> oculta la fila (<code class="res">display:none</code>) que no coincide con la búsqueda.
+      Usamos el médodo del DOM <code class="res">toLowerCase()</code> para convertir el texto a minúsculas, lo que hace que la búsqueda no tenga en cuenta las mayúsculas ("john", "John" y "JOHN" serían lo mismo).
+      </p>
+
+    </section>
+    
+    <section id="titulo"><h2>Filtrar Listas</h2>
+      <p>Realizar una búsqueda de items en una lista sin importar las mayúsculas/minúsculas:</p>
+      <h3>Ejemplo</h3>
+      <img src="./imagenes/img_004.png" alt="Imagen 004">
+      <h3>jQuery</h3>
+      <pre><code>
+  <span><</span>script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myList li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  <span><</span>/script>
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Filtrar cualquier cosa</h2>
+      <p>Realizar una búsqueda de de texto dentro de un elemento div sin importar las mayúsculas/minúsculas:</p>
+      <h3>Ejemplo</h3>
+      <img src="./imagenes/img_005.png" alt="Imagen 005">
+      <h3>jQuery</h3>
+      <pre><code>
+  <span><</span>script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myDIV *").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  <span><</span>/script>
+      </code></pre>
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

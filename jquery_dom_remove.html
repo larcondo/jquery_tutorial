@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Remove Elements</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Quiter Elementos (Remove)</h1>
+    <p>Con jQuery es fácil quitar elementos HTML existentes.</p>
+
+    <section id="titulo"><h2>Quitar Elementos/Contenido</h2>
+      <p>Para quitar elementos y contenido hay dos principales métodos jQuery:</p>
+      <li><code class="res">remove()</code> - Quita el elemento seleccionado (y sus elementos hijos)</li>
+      <li><code class="res">empty()</code> - Quita los elementos hijo del elemento seleccionado</li>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery remove()</h2>
+      <p>El método jQuery <code class="res">remove()</code> quita el elemento seleccionado y sus elementos hijos.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#div1").remove();
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery empty()</h2>
+      <p>El método jQuery <code class="res">empty()</code> quita los elementos hijo del elemento seleccionado.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("#div1").empty();        
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Filtrar los Elementos ha ser removidos</h2>
+      <p>El método jQuery <code class="res">remove()</code> también acepta un parámetro el cual nos permite filtrar los elementos a ser quitados.</p>
+      <p>El parámetro puede ser cualquiera de los selectores jQuery.</p>
+      <p>El ejemplo siguiente quita todos los elementos <code class="res"><span><</span>p></code> con <code class="res">class="test"</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").remove(".test");      
+      </code></pre>
+
+      <p>El ejemplo que sigue quita todos los elementos <code class="res"><span><</span>p></code> con <code class="res">class="test"</code> y <code class="res">class="demo"</code>:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").remove(".test, .demo");      
+      </code></pre>
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

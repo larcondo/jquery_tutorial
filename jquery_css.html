@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery css() Method</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - El método css()</h1>
+    <p>El método <code class="res">css()</code> establece o retorna una o más propiedades de estilo para los elementos seleccionados.</p>
+
+    <section id="titulo"><h2>Retornar una Propiedad CSS</h2>
+      <p>Para retornar el valor específico de una propiedad CSS, utilizamos la siguiente sintaxis:</p>
+      <pre><code>
+  css("<i>propertyname</i>");
+      </code></pre>
+      
+      <p>El siguiente ejemplo retornará el valor del "background-color" del primer elemento que coincida con el elemento seleccionado:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").css("background-color");
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Establecer una Propiedad CSS</h2>
+      <p>Para setear una propiedad CSS específica, utilizaremos la siguiente sintaxis:</p>
+      <pre><code>
+  css("<i>propertyname</i>","<i>value</i>");
+      </code></pre>
+
+      <p>El siguiente ejemplo seteará el valor del "background-color" de TODOS los elementos que coincidan con la selección:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").css("background-color", "yellow");
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Establecer Múltiples Propiedades CSS</h2>
+      <p>Para setear múltiples propiedades CSS, utilizamos la siguiente sintaxis:</p>
+      <pre><code>
+  css({"<i>propertyname</i>":"<i>value</i>","<i>propertyname</i>":"<i>value</i>",...});
+      </code></pre>
+
+      <p>El siguiente ejemplo seteará un "background-color" y un "font-size" para todos los elementos que coinciden con la selección:</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").css({"background-color": "yellow", "font-size": "200%"});      
+      </code></pre>
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

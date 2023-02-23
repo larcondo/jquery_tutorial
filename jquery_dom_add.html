@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Add Elements</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>jQuery - Añair Elementos</h1>
+    <p>Con jQuery es fácil añadir nuevos elementos/contenido.</p>
+
+    <section id="titulo"><h2>Añadir Contenido HTML Nuevo</h2>
+      <p>Veremos cuatro métodos jQuery que son utilizados para añadir contenido:</p>
+      <li><code class="res">append()</code> - Inserta contenido al final de los elementos seleccionados</li>
+      <li><code class="res">prepend()</code> - Inserta contenido al principio de los elementos seleccionados</li>
+      <li><code class="res">after()</code> - Inserta contenido después de los elementos seleccionados</li>
+      <li><code class="res">before()</code> - Inserta contenido antes de los elementos seleccionados</li>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery append()</h2>
+      <p>El método jQuery <code class="res">append()</code> inserta contenido AL FINAL de los elementos HTML seleccionados.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").append("Some appended text.");
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery prepend()</h2>
+      <p>El método jQuery <code class="res">prepend()</code> inserta contenido AL COMIENZO de los elementos HTML seleccionados.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("p").prepend("Some prepended text.");
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Añadir Varios Elementos Nuevos con append() y prepend()</h2>
+      <p>En ambos ejemplos anteriores solo hemos insertado algún texto al comienzo o al final de los elementos HTML seleccionados.</p>
+      <p>Sin embargo, ambos métodos append() y prepend() pueden tomar un número infinito de nuevos elementos como parámetros.
+        Los nuevos elementos pueden ser generados con texto/HTML, con jQuery o con código JavaScript y elementos del DOM. 
+      </p>
+      <p>En el ejemplo siguiente, crearemos varios nuevos elementos. Los elementos son creados con texto/HTML, jQuery y JavaScript/DOM.
+        Luego añadiremos los nuevos elementos al texto con el método <code class="res">append()</code> (también funcionaría para <code class="res">prepend()</code>):
+      </p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  function appendText() {
+    var txt1 = "<span><</span>p>Text.<span><</span>/p>";               // Create element with HTML 
+    var txt2 = $("<span><</span>p><span><</span>/p>").text("Text.");   // Create with jQuery
+    var txt3 = document.createElement("p");  // Create with DOM
+    txt3.innerHTML = "Text.";
+    $("body").append(txt1, txt2, txt3);      // Append the new elements
+  }
+      </code></pre>
+    </section>
+    
+    <section id="titulo"><h2>Los métodos jQuery after() y before()</h2>
+      <p>El método jQuery <code class="res">after()</code> inserta contenido DESPUÉS de los elementos seleccionados.</p>
+      <p>El método jQuery <code class="res">before()</code> inserta contenido ANTES de los elementos seleccionados.</p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  $("img").after("Some text after");
+
+  $("img").before("Some text before");
+      </code></pre>
+    </section>
+    <section id="titulo"><h2>Añadir Varios Elementos Nuevos con after() y before()</h2>
+      <p>También, ambos métodos after() y before() pueden tomar un infinito número de elementos como parámetros.
+        Los nuevos elementos pueden ser generados con texto/HTML, con jQuery o con código JavaScript.
+      </p>
+      <p>En el ejemplo siguiente crearemos varios nuevos elementos. Los elementos son creados con texto/HTML, jQuery y JavaScript/DOM. 
+        Luego insertaremos los nuevos elementos al texto con el método <code class="res">after()</code> (también funcionaría para <code class="res">before</code>):
+      </p>
+      <h3>Ejemplo</h3>
+      <pre><code>
+  function afterText() {
+    var txt1 = "<span><</span>b>I <span><</span>/b>";                    // Create element with HTML 
+    var txt2 = $("<span><</span>i><span><</span>/i>").text("love ");     // Create with jQuery
+    var txt3 = document.createElement("b");    // Create with DOM
+    txt3.innerHTML = "jQuery!";
+    $("img").after(txt1, txt2, txt3);          // Insert new elements after <span><</span>img>
+  }
+      </code></pre>
+    </section>
+
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>

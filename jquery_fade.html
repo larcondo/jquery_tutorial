@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagenes/jquery-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>jQuery Effects - Fading</title>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <div class="top-menu">
+      <button class="button-menu">Menu</button>
+      <div class="menu" id="menu">
+        <!-- Los enlaces se agregan mediante codigo.js -->
+      </div>
+    </div>
+
+    <h1>Efectos jQuery - Fading</h1>
+
+    <section id="titulo"><h2>jQuery Fading - Métodos</h2>
+      <p>Con jQuery podemos desvanecer (fade) un elemento mostrándolo u ocultándolo.</p>
+      <p>jQuery tiene los siguientes métodos para desvanecer:</p>
+      <li><code class="res">fadeIn()</code></li>
+      <li><code class="res">fadeOut()</code></li>
+      <li><code class="res">fadeToggle()</code></li>
+      <li><code class="res">fadeTo()</code></li>
+    </section>
+
+    <section id="titulo"><h2>El método jQuery fadeIn()</h2>
+      <p>El método jQuery <code class="res">fadeIn()</code> es utilizado para mostrar gradualmente un elemento oculto:</p>
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).fadeIn(<i>speed</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro opcional <i>speed</i> especifica la duración del efecto. Puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que el método fadeIn() se complete.</p>
+      <p>El ejemplo siguiente muestra el método <code class="res">fadeIn()</code> con diferentes parámetros:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+        </code></pre>
+      </div>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery fadeOut()</h2>
+      <p>El método jQuery <code class="res">fadeOut()</code> es utilizado para ocultar gradualmente un elemento visible.</p>
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).fadeOut(<i>speed</i>,<i>callback</i>);
+      </code></pre>
+
+      <p>El parámetro opcional <i>speed</i> especifica la duración del efecto. Puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que el método fadeOut() se complete.</p>
+      <p>El ejemplo siguiente muestra el método <code class="res">fadeOut()</code> con diferentes parámetros:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+  });
+        </code></pre>
+      </div>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery fadeToggle()</h2>
+      <p>El método jQuery <code class="res">fadeToggle()</code> alterna entre los métodos <code class="res">fadeIn()</code> y <code class="res">fadeOut()</code>.</p>
+      <p>Si el elemento está oculto, <code class="res">fadeToggle()</code> lo mostrará gradualmente.</p>
+      <p>Si el elemento está visible, <code class="res">fadeToggle()</code> lo ocultará gradualmente.</p>
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).fadeToggle(<i>speed</i>,<i>callback</i>);
+      </code></pre>
+      
+      <p>El parámetro opcional <i>speed</i> especifica la duración del efecto. Puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que el método fadeToggle() se complete.</p>
+      <p>El ejemplo siguiente muestra el método <code class="res">fadeToggle()</code> con diferentes parámetros:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
+  });
+        </code></pre>
+      </div>
+    </section>
+    
+    <section id="titulo"><h2>El método jQuery fadeTo()</h2>
+      <p>El método jQuery <code class="res">fadeTo()</code> permite mostrar/ocultar gradualmente a una dada opacidad (valor entre 0 y 1).</p>
+      <h4>Sintaxis:</h4>
+      <pre><code>
+  $(<i>selector</i>).fadeTo(<i>speed</i>,<i>opacity</i>,<i>callback</i>);
+      </code></pre>
+      <p>El parámetro opcional <i>speed</i> especifica la duración del efecto. Puede tomar los siguientes valores: "slow", "fast" o milisegundos.</p>
+      <p>El parámetro obligatorio <i>opacity</i> especifica a qué valor de opacidad se mostrará/ocultará gradualmente (valor entre 0 y 1).</p>
+      <p>El parámetro opcional <i>callback</i> es una función a ser ejecutada luego de que el método fadeTo() se complete.</p>
+      <p>El ejemplo siguiente muestra el método <code class="res">fadeTo()</code> con diferentes parámetros:</p>
+      <button class="accordion"><h3>Ejemplo</h3></button>
+      <div class="panel">
+        <pre><code>
+  $("button").click(function(){
+    $("#div1").fadeTo("slow", 0.15);
+    $("#div2").fadeTo("slow", 0.4);
+    $("#div3").fadeTo("slow", 0.7);
+  });
+        </code></pre>
+      </div>
+
+    </section>
+    
+    <hr>
+    <footer>
+      
+      <div class="footer-iconos">
+        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://es-es.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://ar.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <p>AngularJS Tutorial.</p>
+      <p>Copyright 2023 by Lucas. All Rights Reserved.</p>
+      <p>Author: Lucas</p>
+
+    </footer>
+
+  </div>
+<script src="./codigo.js"></script>
+</body>
+</html>
