@@ -1,5 +1,5 @@
 const paginas = [
-  {href: "home.html", texto: "Home"},
+  {href: "index.html", texto: "Home"},
   {href: "jquery_syntax.html", texto: "jQuery Sintaxis"},
   {href: "jquery_selectors.html", texto: "jQuery Selectores"},
   {href: "jquery_events.html", texto: "jQuery Métodos de Eventos"},
